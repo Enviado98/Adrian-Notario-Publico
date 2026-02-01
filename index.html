@@ -1,1 +1,437 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO & META -->
+    <title>Adrian Escobar | Notario Público & Servicios Migratorios</title>
+    <meta name="description" content="Servicios notariales y trámites migratorios profesionales en Homestead, Florida. Poderes, traducciones y certificaciones.">
 
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Playfair Display (Autoridad) y Lato (Legibilidad) -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Iconos -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Lato', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        'legal-slate': '#1E293B',  /* Gris Oscuro Premium */
+                        'legal-gold': '#C5A059',   /* Dorado Notarial */
+                        'legal-gray': '#F8FAFC',   /* Fondo Claro */
+                        'legal-blue': '#0F172A',   /* Azul Marino Profundo */
+                    },
+                    boxShadow: {
+                        'card': '0 4px 20px rgba(0, 0, 0, 0.05)',
+                        'hover': '0 10px 25px rgba(0, 0, 0, 0.1)',
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 1s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Fondo Hero con superposición elegante */
+        .hero-bg {
+            background-image: linear-gradient(to right, rgba(15, 23, 42, 0.9), rgba(30, 41, 59, 0.8)), url('https://raw.githubusercontent.com/Enviado98/Adrian-Notario-Publico/main/fondo.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        /* Glassmorphism Corporativo */
+        .glass-corp {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Botón Dorado Premium */
+        .btn-gold {
+            background: linear-gradient(135deg, #C5A059 0%, #A68545 100%);
+            color: white;
+            transition: all 0.3s ease;
+        }
+        .btn-gold:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(197, 160, 89, 0.4);
+        }
+
+        /* Línea divisoria elegante */
+        .divider-gold {
+            height: 2px;
+            width: 60px;
+            background-color: #C5A059;
+            margin: 1.5rem 0;
+        }
+    </style>
+</head>
+<body class="bg-legal-gray text-slate-700 antialiased selection:bg-legal-gold selection:text-white">
+
+    <!-- NAVBAR -->
+    <nav class="fixed w-full z-50 top-0 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-100 transition-all duration-300">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Logo / Nombre -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="bg-legal-slate text-legal-gold p-2 rounded-sm shadow-sm">
+                    <i class="ph-fill ph-pen-nib text-xl"></i>
+                </div>
+                <div class="leading-tight">
+                    <h1 class="font-serif text-xl font-bold text-legal-slate tracking-wide uppercase">Adrian Escobar</h1>
+                    <p class="font-sans text-[10px] text-gray-500 uppercase tracking-widest">Notario Público</p>
+                </div>
+            </a>
+
+            <!-- Contacto Header -->
+            <div class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-600">
+                <a href="tel:+17864984024" class="flex items-center gap-2 hover:text-legal-gold transition-colors">
+                    <i class="ph-bold ph-phone"></i> +1 (786) 498-4024
+                </a>
+                <a href="#contacto" class="btn-gold px-6 py-2 rounded-sm font-bold tracking-wide shadow-md">
+                    AGENDAR CITA
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="hero-bg min-h-[85vh] flex items-center justify-center relative">
+        <div class="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            
+            <!-- Contenido Principal -->
+            <div class="text-white animate-fade-in z-10 text-center lg:text-left">
+                <div class="inline-block border border-legal-gold/50 text-legal-gold px-4 py-1 mb-6 text-xs font-bold uppercase tracking-[0.2em]">
+                    Homestead, Florida
+                </div>
+                
+                <h1 class="font-serif text-5xl md:text-7xl font-bold leading-tight mb-6">
+                    Soluciones Legales <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-legal-gold to-yellow-200">
+                        Confiables
+                    </span>
+                </h1>
+                
+                <p class="text-lg text-gray-300 mb-10 font-light leading-relaxed max-w-lg mx-auto lg:mx-0">
+                    Servicios profesionales de notaría pública y trámites migratorios. Autenticidad, precisión y compromiso con su tranquilidad legal.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                    <a href="tel:+17864984024" class="btn-gold px-8 py-3.5 rounded-sm font-bold shadow-lg flex items-center justify-center gap-2 uppercase text-sm tracking-widest">
+                        <i class="ph-bold ph-phone-call"></i> Llamar Ahora
+                    </a>
+                    <a href="#servicios" class="bg-transparent border border-white text-white hover:bg-white hover:text-legal-slate px-8 py-3.5 rounded-sm font-bold transition-all flex items-center justify-center gap-2 uppercase text-sm tracking-widest">
+                        Nuestros Servicios
+                    </a>
+                </div>
+            </div>
+
+            <!-- Tarjeta de Estado & Horarios -->
+            <div class="relative z-10 w-full max-w-md mx-auto lg:ml-auto animate-fade-in delay-200">
+                <div class="glass-corp rounded-sm overflow-hidden p-1 shadow-2xl">
+                    <!-- Cabecera Estado -->
+                    <div class="bg-slate-50 p-6 border-b border-gray-200 flex items-center justify-between">
+                        <div class="flex items-center gap-4">
+                            <div class="relative flex h-3 w-3">
+                                <span id="status-ping" class="animate-ping absolute inline-flex h-full w-full rounded-full bg-slate-400 opacity-75"></span>
+                                <span id="status-light" class="relative inline-flex rounded-full h-3 w-3 bg-slate-500"></span>
+                            </div>
+                            <div>
+                                <h3 id="status-text" class="font-serif text-lg text-legal-slate font-bold">Consultando...</h3>
+                                <p class="text-[10px] text-gray-500 font-bold tracking-widest uppercase">Oficina en Homestead</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Horarios -->
+                    <div class="bg-white p-6 space-y-4 text-sm text-slate-600">
+                        <div class="flex justify-between items-center border-b border-dotted border-gray-200 pb-2">
+                            <span class="font-bold">Lunes - Viernes</span>
+                            <span class="text-legal-slate">08:00 - 20:00</span>
+                        </div>
+                        <div class="flex justify-between items-center border-b border-dotted border-gray-200 pb-2">
+                            <span class="font-bold">Sábado - Domingo</span>
+                            <span class="text-legal-slate">10:00 - 17:00</span>
+                        </div>
+                        
+                        <a href="https://maps.app.goo.gl/GH5R+WX" target="_blank" class="block mt-4 text-center text-xs font-bold text-legal-gold hover:text-legal-slate transition-colors uppercase tracking-widest border border-legal-gold/30 py-2 rounded-sm hover:border-legal-slate">
+                            <i class="ph-bold ph-map-pin mr-1"></i> Ver Ubicación
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- SERVICIOS -->
+    <section id="servicios" class="py-24 bg-white relative">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <span class="text-legal-gold font-bold tracking-[0.2em] uppercase text-xs mb-2 block">Experiencia y Legalidad</span>
+                <h2 class="font-serif text-4xl text-legal-slate font-bold mb-4">Nuestros Servicios</h2>
+                <div class="w-16 h-1 bg-legal-slate mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Servicio 1: Notaría General -->
+                <div class="bg-legal-gray p-8 rounded-sm hover:shadow-hover transition-all duration-300 group border border-slate-100 reveal">
+                    <i class="ph-thin ph-stamp text-5xl text-legal-gold mb-6 group-hover:scale-110 transition-transform block"></i>
+                    <h3 class="font-serif text-xl font-bold text-legal-slate mb-3">Certificaciones Notariales</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed mb-4">Certificación de autenticidad de documentos, acuse de recibo y certificaciones generales con sello oficial.</p>
+                    <ul class="text-xs text-gray-500 space-y-2 list-disc list-inside">
+                        <li>Acuse de recibo</li>
+                        <li>Autenticidad de documentos</li>
+                    </ul>
+                </div>
+
+                <!-- Servicio 2: Migración -->
+                <div class="bg-legal-slate p-8 rounded-sm hover:shadow-hover transition-all duration-300 group reveal delay-100 text-white relative overflow-hidden">
+                    <div class="absolute top-0 right-0 p-4 opacity-10"><i class="ph-fill ph-globe-hemisphere-west text-9xl"></i></div>
+                    <i class="ph-thin ph-passport text-5xl text-legal-gold mb-6 group-hover:scale-110 transition-transform block"></i>
+                    <h3 class="font-serif text-xl font-bold text-white mb-3">Trámites Migratorios</h3>
+                    <p class="text-sm text-gray-300 leading-relaxed mb-4">Asesoría y gestión en aplicaciones para residencia, ciudadanía y otros procesos migratorios en EE.UU.</p>
+                    <ul class="text-xs text-gray-400 space-y-2 list-disc list-inside">
+                        <li>Residencia y Ciudadanía</li>
+                        <li>Peticiones familiares</li>
+                    </ul>
+                </div>
+
+                <!-- Servicio 3: Poderes y Traducciones -->
+                <div class="bg-legal-gray p-8 rounded-sm hover:shadow-hover transition-all duration-300 group border border-slate-100 reveal delay-200">
+                    <i class="ph-thin ph-translate text-5xl text-legal-gold mb-6 group-hover:scale-110 transition-transform block"></i>
+                    <h3 class="font-serif text-xl font-bold text-legal-slate mb-3">Traducciones y Poderes</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed mb-4">Certificación de poderes notariales y traducción certificada de documentos oficiales.</p>
+                    <ul class="text-xs text-gray-500 space-y-2 list-disc list-inside">
+                        <li>Certificados de Nacimiento</li>
+                        <li>Matrimonio y Divorcio</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CLIENTES SATISFECHOS (Galería Elegante) -->
+    <section class="py-24 bg-slate-50 border-t border-slate-200">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                
+                <div class="reveal">
+                    <div class="divider-gold"></div>
+                    <h2 class="font-serif text-4xl text-legal-slate font-bold mb-6">Compromiso con la Comunidad</h2>
+                    <p class="text-gray-600 leading-relaxed mb-8">
+                        Nuestro mayor orgullo es la satisfacción de nuestros clientes. Hemos ayudado a cientos de familias en Homestead y Florida con sus procesos legales y migratorios, siempre con un trato humano y profesional.
+                    </p>
+                    
+                    <div class="flex items-center gap-4 text-legal-slate font-serif italic">
+                        <span class="text-4xl text-legal-gold">"</span>
+                        <p>Me asesoro bien y tiene mucho conocimiento. Lo recomiendo.</p>
+                    </div>
+                    <p class="text-xs text-gray-400 font-bold uppercase mt-4 tracking-widest pl-8">— Cliente Satisfecho</p>
+                </div>
+
+                <!-- Grid de Fotos -->
+                <div class="grid grid-cols-2 gap-4 reveal delay-100">
+                    <div class="col-span-2 h-64 overflow-hidden rounded-sm shadow-md group">
+                        <img src="https://raw.githubusercontent.com/Enviado98/Adrian-Notario-Publico/main/clientesatisfechos1.jpg" alt="Cliente Feliz" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    </div>
+                    <div class="h-48 overflow-hidden rounded-sm shadow-md group">
+                        <img src="https://raw.githubusercontent.com/Enviado98/Adrian-Notario-Publico/main/clientesatisfechos2.jpg" alt="Tramite Exitoso" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    </div>
+                    <div class="h-48 overflow-hidden rounded-sm shadow-md group">
+                        <img src="https://raw.githubusercontent.com/Enviado98/Adrian-Notario-Publico/main/clientesatisfechos3.jpg" alt="Oficina" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ZONA DE CONFIANZA / FOOTER -->
+    <footer id="contacto" class="bg-legal-slate text-white pt-20 pb-10 relative overflow-hidden">
+        <!-- Sello de Fondo -->
+        <div class="absolute bottom-[-50px] right-[-50px] opacity-5 pointer-events-none">
+            <!-- Representación SVG simplificada de un sello estatal/legal -->
+            <svg width="400" height="400" viewBox="0 0 200 200" fill="white">
+                <circle cx="100" cy="100" r="90" stroke="white" stroke-width="2" fill="none"/>
+                <circle cx="100" cy="100" r="70" stroke="white" stroke-width="1" fill="none"/>
+                <path d="M100 20 L100 180 M20 100 L180 100" stroke="white" stroke-width="0.5"/>
+                <text x="50" y="100" font-family="serif" font-size="20" fill="white" opacity="0.5">OFFICIAL</text>
+            </svg>
+        </div>
+
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 border-b border-slate-700 pb-12">
+            
+            <!-- Columna 1 -->
+            <div>
+                <h3 class="font-serif text-2xl font-bold mb-6 flex items-center gap-2">
+                    <i class="ph-fill ph-seal-check text-legal-gold"></i>
+                    Adrian Escobar
+                </h3>
+                <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                    Notario Público comisionado en el Estado de Florida. Servicios integrales para individuos y empresas con la más alta confidencialidad.
+                </p>
+                <div class="flex gap-4">
+                    <a href="https://facebook.com" class="text-slate-400 hover:text-white transition-colors"><i class="ph-fill ph-facebook-logo text-xl"></i></a>
+                    <a href="mailto:info@adrianescobar.com" class="text-slate-400 hover:text-white transition-colors"><i class="ph-fill ph-envelope text-xl"></i></a>
+                </div>
+            </div>
+
+            <!-- Columna 2 -->
+            <div>
+                <h4 class="font-bold text-sm uppercase tracking-widest text-legal-gold mb-6">Contacto</h4>
+                <ul class="space-y-4 text-sm text-slate-300">
+                    <li class="flex items-start gap-3">
+                        <i class="ph-fill ph-map-pin text-lg mt-0.5"></i>
+                        <a href="https://maps.app.goo.gl/GH5R+WX" target="_blank" class="hover:text-white transition-colors">
+                            27726 SW 133rd Pl,<br>Homestead, FL 33032
+                        </a>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="ph-fill ph-phone text-lg"></i>
+                        <a href="tel:+17864984024" class="hover:text-white transition-colors">+1 (786) 498-4024</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Columna 3 (Mapa pequeño) -->
+            <div>
+                <h4 class="font-bold text-sm uppercase tracking-widest text-legal-gold mb-6">Ubicación</h4>
+                <div class="w-full h-32 rounded-sm overflow-hidden bg-slate-800 border border-slate-600 grayscale hover:grayscale-0 transition-all duration-500">
+                    <iframe 
+                    src="https://maps.google.com/maps?q=27726+SW+133rd+Pl,+Homestead,+FL+33032&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                    width="100%" 
+                    height="100%" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                 </iframe>
+                </div>
+            </div>
+        </div>
+
+        <div class="container mx-auto px-6 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-slate-500">
+            <p>&copy; 2026 Adrian Escobar - Notario Público. Todos los derechos reservados.</p>
+            <p class="mt-2 md:mt-0 font-serif italic">Compromiso & Legalidad</p>
+        </div>
+    </footer>
+
+    <!-- BOTONES FLOTANTES -->
+    <div class="fixed bottom-6 right-6 z-50 flex flex-col gap-3 items-end">
+        <!-- Llamada (Móvil) -->
+        <a href="tel:+17864984024" class="md:hidden w-12 h-12 bg-white text-legal-slate rounded-full shadow-lg flex items-center justify-center border border-slate-200">
+            <i class="ph-fill ph-phone text-xl"></i>
+        </a>
+
+        <!-- WhatsApp (Principal) -->
+        <a href="https://wa.me/17864984024?text=Hola,%20necesito%20información%20sobre%20servicios%20notariales." target="_blank" class="flex items-center gap-3 bg-legal-gold hover:bg-[#b08d4b] text-white px-4 py-3 rounded-sm shadow-lg transition-all group">
+            <span class="font-bold text-sm hidden group-hover:block">Consultar WhatsApp</span>
+            <i class="ph-fill ph-whatsapp-logo text-2xl"></i>
+        </a>
+    </div>
+
+    <!-- LÓGICA -->
+    <script>
+        // Scroll Reveal
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+
+        // Lógica de Horarios (L-V 8-20, S-D 10-17)
+        function checkStatus() {
+            try {
+                // Zona Horaria Florida: America/New_York
+                const now = new Date();
+                const formatter = new Intl.DateTimeFormat('en-US', {
+                    timeZone: 'America/New_York',
+                    hour: 'numeric',
+                    minute: 'numeric',
+                    weekday: 'short',
+                    hour12: false
+                });
+
+                const parts = formatter.formatToParts(now);
+                const hour = parseInt(parts.find(p => p.type === 'hour').value);
+                const day = parts.find(p => p.type === 'weekday').value; 
+
+                let isOpen = false;
+
+                // Lunes a Viernes: 08:00 - 20:00
+                if (['Mon', 'Tue', 'Wed', 'Thu', 'Fri'].includes(day)) {
+                    if (hour >= 8 && hour < 20) isOpen = true;
+                }
+                // Sábado y Domingo: 10:00 - 17:00
+                else if (['Sat', 'Sun'].includes(day)) {
+                    if (hour >= 10 && hour < 17) isOpen = true;
+                }
+
+                const light = document.getElementById('status-light');
+                const ping = document.getElementById('status-ping');
+                const text = document.getElementById('status-text');
+
+                if (isOpen) {
+                    light.className = "relative inline-flex rounded-full h-3 w-3 bg-green-500";
+                    ping.className = "animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75";
+                    text.innerText = "Oficina Abierta";
+                    text.classList.remove('text-legal-slate');
+                    text.classList.add('text-green-700');
+                } else {
+                    light.className = "relative inline-flex rounded-full h-3 w-3 bg-red-500";
+                    ping.className = "hidden";
+                    text.innerText = "Oficina Cerrada";
+                    text.classList.remove('text-green-700');
+                    text.classList.add('text-legal-slate');
+                }
+            } catch (e) {
+                console.error(e);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            reveal();
+            checkStatus();
+        });
+        
+        setInterval(checkStatus, 60000);
+    </script>
+</body>
+</html>
